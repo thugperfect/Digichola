@@ -3,6 +3,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import { MdOutlineMic } from "react-icons/md";
 import { CgMoreO } from "react-icons/cg";
 import { AllProducts } from "../utils/data/abiSearchProfiles";
+import { IoMdClose } from "react-icons/io";
 const AbiSearch = (props) => {
   const border = "border border-1 border-gray-500";
   const center = "flex justify-center items-center";
@@ -27,6 +28,10 @@ const AbiSearch = (props) => {
       setIsFocused(false);
     }
   }
+  function handleClose(){
+    setIsFocused(false);
+    setSearchInput("");
+  }
 
   return (
     <div>
@@ -50,6 +55,7 @@ const AbiSearch = (props) => {
             placeholder="Search for Categories"
             onInput={handleInput}
             // onFocus={handleFocus}
+            value={searchInput}
             onBlur={handleBlur}
             className={
               border +
@@ -59,7 +65,10 @@ const AbiSearch = (props) => {
           <div
             className={`${border} w-[60px] h-[60px] rounded-r-full border-l-0 ${center}`}
           >
-            <MdOutlineMic className="text-gray-500" />
+            {
+              isFocused?<IoMdClose onClick={handleClose} className="text-gray-500"/>:<MdOutlineMic className="text-gray-500" />
+            }
+            
           </div>
         </div>
 
@@ -81,11 +90,15 @@ const AbiSearch = (props) => {
         ))}
         <div className=" ">
           <div className="w-[150px] h-[150px] flex justify-center items-center">
-            <CgMoreO className="text-[50px]" />
+            
+             <CgMoreO className="text-[50px]" />
+            
+            
           </div>
           <div className="text-lg w-[150px] font-bold text-center">
             Load More...
           </div>
+        
         </div>
       </div>
     </div>
