@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route,HashRouter } from 'react-router-dom';
 import Home from './routes/home/Home';
 import About from './routes/About';
 import FoundingStory from './routes/Founding_story_and_team';

@@ -7,8 +7,8 @@ import { IoMdClose } from "react-icons/io";
 const AbiSearch = (props) => {
   const border = "border border-1 border-gray-500";
   const center = "flex justify-center items-center";
-  const head ="topbar flex sticky top-0  bg-white h-[180px] items-center ";
-  const searchBar = "flex text-[30px] w-3/5"
+  const head ="topbar flex sticky top-0  bg-white h-[120px] items-center ";
+  const searchBar = "flex md:text-[30px] text-[25px]  w-3/5"
   const inputRef = useRef(null);
   const inputDiv = useRef(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -42,7 +42,7 @@ const AbiSearch = (props) => {
         ref={inputDiv}
         className={isFocused ? ` shadow-2xl ${head}` : `${head}`}
       >
-        <div className={isFocused?`${searchBar} mx-[50px]`:`${searchBar} mx-auto`}>
+        <div className={isFocused?`${searchBar} mx-[20px]`:`${searchBar} mx-auto`}>
           <div
             onClick={handleSearchClick}
             className={`${border} w-[60px] h-[60px] rounded-l-full border-r-0 ${center}`}
