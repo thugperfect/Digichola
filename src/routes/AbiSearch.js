@@ -54,7 +54,6 @@ const AbiSearch = (props) => {
             type="text"
             placeholder="Search for Categories"
             onInput={handleInput}
-            // onFocus={handleFocus}
             value={searchInput}
             onBlur={handleBlur}
             className={
@@ -77,13 +76,13 @@ const AbiSearch = (props) => {
 
       <div
         className={
-          " mt-[50px] mx-auto w-4/5 flex flex-wrap gap-10 justify-center"
+          " mt-[50px] mx-auto w-4/5 flex flex-wrap md:gap-10 gap-5 justify-center"
         }
       >
         {AllProducts.allProducts.map((k) => (
           <div key={k.name} className="cursor-pointer">
-            <img src={k.image} className="w-[150px] h-[150px]" alt="" />
-            <div className="text-lg w-[150px] font-bold text-center">
+            <img src={k.image} className="md:w-[150px] md:h-[150px] w-[120px] h-[120px]" alt="" />
+            <div className="text-lg md:w-[150px] w-[120px] font-bold text-center">
               {k.name}
             </div>
           </div>
